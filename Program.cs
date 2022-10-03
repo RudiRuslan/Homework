@@ -20,12 +20,24 @@
 // // 82 -> 10
 // // 9012 -> 12
 
-Console.WriteLine("Введите число: ");
-int a = Convert.ToInt32(Console.ReadLine());
-int res = 0;
-while (a>0)
+// Console.WriteLine("Введите число: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// int res = 0;
+// while (a>0)
+// {
+//     res = res + a % 10;
+//     a = a/10;
+// }
+// Console.WriteLine(res);
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+int[] A = new int[8];
+Random N = new Random();
+for (int i = 0; i < A.Length; i++)
 {
-    res = res + a % 10;
-    a = a/10;
+    A[i] = N.Next(100);
+    Console.Write($"{A[i]}");
 }
-Console.WriteLine(res);
