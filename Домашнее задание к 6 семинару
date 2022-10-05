@@ -1,0 +1,62 @@
+// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+
+int[] randomArr(int start, int end, int lenghtArr)
+{
+    int[] arr = new int[lenghtArr];
+    for (int i = 0; i < lenghtArr; i++)
+    {
+        arr[i] = new Random().Next(start, end + 1);
+    }
+    return arr;
+}
+
+int[] arr = randomArr(-10, 10, 10);
+int count = 0;
+for (int i = 0; i < arr.Length; i++)
+{
+    if (arr[i] > 0)
+    {
+        count++;
+    }
+}
+for (int i = 0; i < arr.Length; i++)
+{
+    Console.Write($"{arr[i]} ");
+}
+Console.WriteLine();
+Console.WriteLine(count);
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями
+// y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+
+double pointX;
+double pointY;
+
+Console.WriteLine("Введите b1: ");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите k1: ");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите b2: ");
+int b2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите k2: ");
+int k2 = Convert.ToInt32(Console.ReadLine());
+int[] arr = randomArr(1, 10, 10);
+int a = arr [1];
+int b = arr [3];
+int c = arr [0];
+int d = arr [2];
+if (a == b)
+{
+ Console.WriteLine("Прямые с такими параметрами паралельны");
+}
+else
+{
+    pointX = (double) (d-c)/(a-b);
+    pointY = (double) a*(d-c)/(a-b) + c;
+    Console.WriteLine("Координаты точки пересечения двух прямых:");
+    Console.WriteLine($"Х: {pointX:0.00}");
+    Console.WriteLine($"Y: {pointY:0.00}");
+}
